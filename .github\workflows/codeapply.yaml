@@ -3,7 +3,7 @@ name: Terraform Apply
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   terraform:
@@ -12,11 +12,6 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-
-      - name: Set up Terraform
-        uses: hashicorp/setup-terraform@v1
-        with:
-          terraform_version: 1.0.0 # Replace with the desired version of Terraform
 
       - name: Configure AWS credentials
         env:
